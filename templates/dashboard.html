@@ -18,8 +18,8 @@
             <a href="{{ url_for('dashboard') }}">Dashboard</a>
             <a href="{{ url_for('book_appointment')}}">Book Appointment</a>
             <a href="{{ url_for('faqs') }}">FAQs</a>
-            <a href="{{ url_for('courses') }}">View All Users</a>
-            {% if isadmin %}
+            <a href="{{ url_for('courses') }}">View All Courses</a>
+            {% if isadmin == 1 %}
             <a href="{{ url_for('admin_dashboard') }}">Admin</a>
             {% endif %}
         </div>
