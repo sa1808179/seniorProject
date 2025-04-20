@@ -1,0 +1,45 @@
+
+<!-- templates/advisor_view_chat.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Chat Session {{ session_id }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/chatsession.css') }}">
+
+</head>
+<body>
+<div class="admin-panel">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h1>Advisor <br> Dashboard</h1>
+        </div>
+        <ul class="menu">
+            <li><a href="{{ url_for('advisor_chat_sessions_view') }}">View All Chats</a></li>
+            <li><a href="{{ url_for('addappointmentslots') }}">Add Appointment Slots</a></li>
+            <li><a href="{{ url_for('courses') }}">View Study Plan Courses</a></li>
+            <li><a href="{{ url_for('appointments') }}">View All Appointments</a></li>
+            <li><a href="{{ url_for('logout') }}">Logout</a></li>
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="content">
+        <h2>Chat Session {{ session_id }}</h2>
+        <div class="chat-container">
+            {% for user, user_message, bot_response, timestamp in chats %}
+            <div class="chat-entry">
+                <div class="chat-timestamp">{{ timestamp }}</div>
+                <div class="chat-user"><strong>{{ user }}:</strong> {{ user_message }}</div>
+                <div class="chat-bot"><strong>Bot:</strong> {{ bot_response }}</div>
+            </div>
+            {% endfor %}
+        </div>
+        <a class="btn" href="{{ url_for('advisor_chat_sessions_view') }}">Back to Sessions</a>
+    </div>
+</div>
+</body>
+</html>

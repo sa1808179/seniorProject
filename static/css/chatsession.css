@@ -1,0 +1,170 @@
+/* Chat Session Styling */
+.chat-container {
+    background-color: white;
+    border-radius: 15px;
+    padding: 30px;
+    margin: 30px auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    max-width: 900px;
+    width: 90%;
+    height: calc(100vh - 250px);
+    overflow-y: auto;
+}
+
+.chat-entry {
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: #f8f9fa;
+    border: 1px solid rgba(138, 0, 69, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+}
+
+.chat-entry:hover {
+    transform: translateY(-2px);
+}
+
+.chat-timestamp {
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 12px;
+    font-style: italic;
+}
+
+.chat-user {
+    margin-bottom: 15px;
+    padding: 15px;
+    background-color: rgba(0, 107, 130, 0.05);
+    border-radius: 10px;
+    position: relative;
+    color: rgb(53, 7, 30);
+}
+
+.chat-bot {
+    padding: 15px;
+    background-color: rgba(138, 0, 69, 0.05);
+    border-radius: 10px;
+    position: relative;
+    color: rgb(53, 7, 30);
+}
+
+.chat-user strong, 
+.chat-bot strong {
+    color: rgb(138, 0, 69);
+    margin-right: 10px;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-block;
+}
+
+/* Back Button Styling */
+.content .btn {
+    display: inline-block;
+    padding: 14px 28px;
+    background-color: rgb(138, 0, 69);
+    color: wheat;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 14px;
+    margin: 20px 0;
+    border: 2px solid transparent;
+}
+
+.content .btn:hover {
+    background-color: rgb(165, 0, 82);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(138, 0, 69, 0.2);
+}
+
+.content .btn:active {
+    transform: translateY(0);
+}
+
+/* Page Title Styling */
+.content h2 {
+    color: wheat;
+    font-size: 28px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Scrollbar Styling */
+.chat-container::-webkit-scrollbar {
+    width: 10px;
+}
+
+.chat-container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+}
+
+.chat-container::-webkit-scrollbar-thumb {
+    background: rgb(138, 0, 69);
+    border-radius: 5px;
+    border: 2px solid #fff;
+}
+
+.chat-container::-webkit-scrollbar-thumb:hover {
+    background: rgb(165, 0, 82);
+}
+
+/* Content Area Specific Styles */
+.admin-panel .content {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(0, 107, 130);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .chat-container {
+        width: 95%;
+        padding: 20px;
+        margin: 20px auto;
+    }
+
+    .chat-entry {
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .chat-container {
+        width: 100%;
+        margin: 10px auto;
+        height: calc(100vh - 350px);
+        padding: 15px;
+    }
+
+    .chat-entry {
+        padding: 12px;
+        margin-bottom: 20px;
+    }
+
+    .chat-user,
+    .chat-bot {
+        padding: 12px;
+    }
+
+    .content .btn {
+        padding: 12px 24px;
+        font-size: 13px;
+    }
+
+    .content h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+}

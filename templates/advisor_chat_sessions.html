@@ -1,0 +1,54 @@
+<!-- templates/advisor_chat_sessions.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advisor Chat Sessions</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
+</head>
+<body>
+<div class="admin-panel">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h1>Advisor <br> Dashboard</h1>
+        </div>
+        <ul class="menu">
+            <li><a href="{{ url_for('advisor_chat_sessions_view') }}">View All Chats</a></li>
+            <li><a href="{{ url_for('addappointmentslots') }}">Add Appointment Slots</a></li>
+            <li><a href="{{ url_for('courses') }}">View Study Plan Courses</a></li>
+            <li><a href="{{ url_for('appointments') }}">View All Appointments</a></li>
+            <li><a href="{{ url_for('logout') }}">Logout</a></li>
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="content">
+        <h2>All Chat Sessions</h2>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Session ID</th>
+                        <th>User</th>
+                        <th>Created At</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for session_id, username, created_at in sessions %}
+                    <tr>
+                        <td>{{ session_id }}</td>
+                        <td>{{ username }}</td>
+                        <td>{{ created_at }}</td>
+                        <td><a class="button" href="{{ url_for('advisor_view_chat', session_id=session_id) }}">View Chat</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

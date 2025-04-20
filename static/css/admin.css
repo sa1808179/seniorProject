@@ -1,0 +1,328 @@
+/* Admin Panel Container */
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.admin-panel {
+    display: flex;
+    height: 100vh;
+    font-family: 'Jost', sans-serif;
+    overflow: hidden;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 250px;
+    min-width: 250px;
+    background-color: rgb(138, 0, 69);
+    color: wheat;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+    overflow-y: auto;
+}
+
+.sidebar-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    border-bottom: 3px solid wheat;
+}
+
+.sidebar-header h1 {
+    color: wheat;
+    font-size: 26px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 0;
+}
+
+.sidebar-header h2 {
+    font-size: 24px;
+    color: wheat;
+    font-weight: bold;
+    margin: 0;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu li {
+    margin-bottom: 10px;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: wheat;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 15px;
+    display: block;
+    border-bottom: 1px solid wheat;
+    transition: background-color 0.3s ease;
+}
+
+a.button {
+    display: inline-block;
+    background-color: rgb(138, 0, 69);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+  }
+  
+  a.button:hover {
+    background-color: rgb(165, 0, 82);
+  }
+  
+.menu li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Content Area */
+.content {
+    flex: 1;
+    display: flex;
+    background-color: rgb(0, 107, 130);
+    color: wheat;
+    flex-direction: column;
+    padding: 20px;
+    overflow: auto;
+}
+
+.content h1 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: wheat;
+}
+
+.content p {
+    font-size: 18px;
+    line-height: 1.6;
+    font-weight: bold;
+}
+
+/* Container for Forms and Content */
+.container {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.container h1 {
+    color: rgb(138, 0, 69);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+label {
+    color: rgb(138, 0, 69);
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid rgb(0, 107, 130);
+    border-radius: 5px;
+    font-size: 16px;
+    color: rgb(53, 7, 30);
+    background-color: white;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: rgb(138, 0, 69);
+}
+
+select {
+    cursor: pointer;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    padding: 0 20px;
+}
+
+thead th {
+    background-color: rgb(138, 0, 69);
+    color: white;
+    text-transform: uppercase;
+    font-size: 14px;
+    padding: 15px 10px;
+    border: none;
+    text-align: center;
+    white-space: nowrap;
+}
+
+tbody tr {
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s ease;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: rgb(250, 239, 245);
+}
+
+td {
+    font-size: 16px;
+    padding: 15px 10px;
+    text-align: center;
+    border: none;
+    color: rgb(53, 7, 30);
+    white-space: nowrap;
+}
+
+td:last-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Message Styling */
+.message {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.message[style*="color: rgb(130, 5, 5)"] {
+    background-color: #fee;
+    border: 1px solid #fcc;
+}
+
+.message[style*="color: rgb(10, 161, 75)"] {
+    background-color: #efe;
+    border: 1px solid #cfc;
+}
+
+/* Buttons Styling */
+button {
+    background-color: rgb(138, 0, 69);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    width: 100%;
+}
+
+button:hover {
+    background-color: rgb(165, 0, 82);
+    transform: translateY(-2px);
+}
+
+button[style*="color: red;"] {
+    background-color: rgb(189, 7, 7);
+    color: white !important;
+}
+
+button[style*="color: red;"]:hover {
+    background-color: rgb(220, 20, 60);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .sidebar {
+        width: 200px;
+        min-width: 200px;
+    }
+
+    .content {
+        padding: 15px;
+    }
+
+    .container {
+        padding: 20px;
+        margin: 10px;
+    }
+
+    td:last-child {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .admin-panel {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        min-width: unset;
+        max-height: 300px;
+    }
+
+    .content {
+        height: calc(100vh - 300px);
+    }
+
+    .sidebar-header {
+        margin-bottom: 15px;
+        padding: 10px;
+    }
+
+    .menu li {
+        margin-bottom: 5px;
+    }
+
+    .container {
+        margin: 10px;
+        padding: 15px;
+    }
+}

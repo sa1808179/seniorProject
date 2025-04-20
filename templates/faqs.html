@@ -1,0 +1,196 @@
+<!-- templates\faqs.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/faqs.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/nav.css') }}">
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="navbar-left">
+      <a href="{{ url_for('dashboard') }}">Dashboard</a>
+      <a href="{{ url_for('book_appointment')}}">Book Appointment</a>
+      <a href="{{ url_for('faqs') }}">FAQs</a>
+      {% if isadmin %}
+        <a href="{{ url_for('admin_dashboard') }}">Admin</a>
+      {% endif %}
+    </div>
+    <div class="navbar-left"></div>
+    <div class="navbar-left"></div>
+    <div class="navbar-left"></div>
+    <div class="navbar-left"></div>
+    <div class="navbar-left"></div>
+    <div class="navbar-left"></div>
+    <div class="navbar-left"></div>
+    <div class="navbar-left"></div>
+    <div class="navbar-left"></div>
+    <div class="navbar-center">
+      <span id="welcome-message">Welcome, {{ username }}!</span>
+    </div>
+    <div class="navbar-right">
+      <button onclick="logout()">Logout</button>
+    </div>
+  </nav>
+
+  <div class="faq">
+    <h2 class="faq__title">Frequently Asked Questions</h2>
+    
+    <!-- Original FAQ items -->
+    <details>
+      <summary>How many times should a student meet with his/her academic advisor during a semester?</summary>
+      <p>
+        It is recommended that students meet with their academic advisor multiple times throughout the semester. Ideally, students should schedule a meeting at the start of the semester, before early registration, and consult their advisor before dropping any courses.
+      </p>
+    </details>
+    <details>
+      <summary>How and where can a student meet his/her academic advisor?</summary>
+      <p>
+        Students can schedule an appointment (either in person or online) through the Appointment Manager system. Alternatively, they can visit during the advisor's walk-in hours without a prior appointment.
+      </p>
+    </details>
+    <details>
+      <summary>What is academic probation?</summary>
+      <p>
+        Academic probation refers to the academic status of any undergraduate student who has completed at least 19 credit hours (calculated in the GPA) and has earned a cumulative GPA below 2.0.
+      </p>
+    </details>
+    
+    <!-- Added FAQ items from CSV -->
+    <details>
+      <summary>What is the minimum credit load per semester?</summary>
+      <p>
+        The minimum credit load is 12 credit hours during a regular semester.
+      </p>
+    </details>
+    <details>
+      <summary>What is the maximum credit load per semester?</summary>
+      <p>
+        The maximum credit load is 18 credit hours. Students with a GPA above 3.0 may be allowed to register for up to 21 hours with advisor approval.
+      </p>
+    </details>
+    <details>
+      <summary>How can I check my graduation requirements?</summary>
+      <p>
+        You can check your graduation requirements on DegreeWorks or by consulting your academic advisor.
+      </p>
+    </details>
+    <details>
+      <summary>How can I meet with my academic advisor?</summary>
+      <p>
+        You can book an appointment through the Academic Advisory Portal or visit during the advisor's walk-in hours.
+      </p>
+    </details>
+    <details>
+      <summary>Can I drop a course after the add/drop period?</summary>
+      <p>
+        No, once the add/drop period is over, withdrawal is the only option and it will reflect on your transcript.
+      </p>
+    </details>
+    <details>
+      <summary>How do I change my major?</summary>
+      <p>
+        Submit a request through the Self-Service Banner and consult your advisor for eligibility and approval.
+      </p>
+    </details>
+    <details>
+      <summary>What should I do if a class I need is full?</summary>
+      <p>
+        You should contact your advisor and request a capacity override from the department offering the course.
+      </p>
+    </details>
+    <details>
+      <summary>What are the core CS courses I must complete?</summary>
+      <p>
+        Core courses include Introduction to Programming, Data Structures, Algorithms, Operating Systems, and Computer Networks.
+      </p>
+    </details>
+    <details>
+      <summary>Can I take summer courses?</summary>
+      <p>
+        Yes, but availability may be limited. Consult your advisor early if you plan to graduate soon.
+      </p>
+    </details>
+    <details>
+      <summary>Is attendance mandatory in all courses?</summary>
+      <p>
+        Yes, Qatar University has an attendance policy that requires students to attend at least 75% of their classes.
+      </p>
+    </details>
+    <details>
+      <summary>How do I access the course syllabus?</summary>
+      <p>
+        You can download it from the course's Blackboard page or request it directly from your instructor.
+      </p>
+    </details>
+    <details>
+      <summary>What happens if I miss an exam?</summary>
+      <p>
+        If you miss an exam for a valid reason, you must submit an excuse to the Student Affairs office within 3 days.
+      </p>
+    </details>
+    <details>
+      <summary>How is GPA calculated?</summary>
+      <p>
+        GPA is calculated by dividing the total grade points earned by the total credit hours attempted.
+      </p>
+    </details>
+    <details>
+      <summary>What is the passing grade at Qatar University?</summary>
+      <p>
+        The passing grade is D (1.00 GPA points) for undergraduate students.
+      </p>
+    </details>
+    <details>
+      <summary>Can I repeat a failed course?</summary>
+      <p>
+        Yes, and the higher grade will be used in your GPA calculation, though both attempts remain on your transcript.
+      </p>
+    </details>
+    <details>
+      <summary>How do I know who my assigned advisor is?</summary>
+      <p>
+        Your assigned advisor's name appears on your Self-Service Banner under your student profile.
+      </p>
+    </details>
+    <details>
+      <summary>Can international students take online classes?</summary>
+      <p>
+        Yes, but it's best to confirm with the Registrar's Office and your department in case of specific restrictions.
+      </p>
+    </details>
+    <details>
+      <summary>What is a prerequisite course?</summary>
+      <p>
+        A prerequisite is a course you must complete before enrolling in another course that depends on it.
+      </p>
+    </details>
+    <details>
+      <summary>How can I improve my GPA?</summary>
+      <p>
+        Retake failed or low-graded courses, plan your schedule wisely, and consult your advisor for academic support.
+      </p>
+    </details>
+  </div>
+
+  <script>
+    // Toggle open/close animations for FAQ sections
+    document.querySelectorAll("details").forEach((detail) => {
+      detail.addEventListener("toggle", () => {
+        if (detail.open) {
+          detail.classList.add("open");
+        } else {
+          detail.classList.remove("open");
+        }
+      });
+    });
+  </script>
+  <script src="{{ url_for('static', filename='JS/script.js') }}"></script>
+</body>
+
+</html>
